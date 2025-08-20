@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Stock Forecasting - AI Predictions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <h1>Tesla Stock Forecasting</h1>
+                </div>
+                <div class="status-indicator">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span class="status-text" id="statusText">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Panel -->
+            <section class="input-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-cog"></i> Prediction Settings</h2>
+                </div>
+                <div class="input-form">
+                    <div class="form-group">
+                        <label for="intervalCount">Prediction Intervals</label>
+                        <div class="input-wrapper">
+                            <input type="range" id="intervalSlider" min="1" max="24" value="4" class="slider">
+                            <input type="number" id="intervalCount" min="1" max="24" value="4" class="number-input">
+                            <span class="input-helper">intervals (15 min each)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeHorizon">Prediction Horizon</label>
+                        <div class="time-display">
+                            <span id="timeHorizon">1 hour</span>
+                            <small id="timeHorizonDetails">4 intervals × 15 minutes</small>
+                        </div>
+                    </div>
+
+                    <button id="predictBtn" class="predict-btn">
+                        <i class="fas fa-magic"></i>
+                        Generate Prediction
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Panel -->
+            <section class="results-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-chart-area"></i> Prediction Results</h2>
+                    <div class="panel-actions">
+                        <button id="refreshBtn" class="action-btn" title="Refresh">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button id="exportBtn" class="action-btn" title="Export Data">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="results-content" id="resultsContent">
+                    <div class="placeholder-content">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Ready for Predictions</h3>
+                        <p>Configure your settings and click "Generate Prediction" to see AI-powered Tesla stock forecasts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Panel -->
+            <section class="charts-panel" id="chartsPanel" style="display: none;">
+                <div class="panel-header">
+                    <h2><i class="fas fa-chart-bar"></i> Forecast Visualization</h2>
+                    <div class="chart-controls">
+                        <select id="chartType" class="chart-select">
+                            <option value="line">Line Chart</option>
+                            <option value="area">Area Chart</option>
+                            <option value="comparison">Model Comparison</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="forecastChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Metrics Panel -->
+            <section class="metrics-panel" id="metricsPanel" style="display: none;">
+                <div class="panel-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Model Performance</h2>
+                </div>
+                <div class="metrics-grid" id="metricsGrid">
+                    <!-- Metrics will be populated dynamically -->
+                </div>
+            </section>
+
+            <!-- History Panel -->
+            <section class="history-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-history"></i> Recent Predictions</h2>
+                    <button id="historyRefreshBtn" class="action-btn" title="Refresh History">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="history-content" id="historyContent">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Loading history...</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="loading-spinner">
+                    <i class="fas fa-brain fa-pulse"></i>
+                </div>
+                <h3>AI Models Processing</h3>
+                <p>Generating Tesla stock predictions using ARIMA and SARIMA models...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div class="modal" id="errorModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Error</h3>
+                    <button class="modal-close" id="modalClose">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p id="errorMessage">An error occurred while processing your request.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" id="errorOkBtn">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
