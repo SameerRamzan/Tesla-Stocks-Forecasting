@@ -1,0 +1,89 @@
+{
+  "prediction_time": "2025-08-20T06:42:30.704360",
+  "model_info": {
+    "arima_aic": 4756.526265225077,
+    "sarima_aic": 4378.232241254716
+  },
+  "predictions": [
+    {
+      "timestamp": "2025-01-03T16:00:00",
+      "interval_minutes_ahead": 15,
+      "arima_prediction": 393.0144479126289,
+      "arima_lower_bound": 383.03538560399943,
+      "arima_upper_bound": 402.99351022125836,
+      "sarima_prediction": 394.07535073513736,
+      "sarima_lower_bound": 383.3560356809944,
+      "sarima_upper_bound": 404.7946657892803
+    },
+    {
+      "timestamp": "2025-01-03T16:15:00",
+      "interval_minutes_ahead": 30,
+      "arima_prediction": 393.310665439671,
+      "arima_lower_bound": 379.2534985224336,
+      "arima_upper_bound": 407.3678323569085,
+      "sarima_prediction": 397.5963104834008,
+      "sarima_lower_bound": 382.31736067255105,
+      "sarima_upper_bound": 412.8752602942506
+    },
+    {
+      "timestamp": "2025-01-03T16:30:00",
+      "interval_minutes_ahead": 45,
+      "arima_prediction": 393.2645010535799,
+      "arima_lower_bound": 375.788472436167,
+      "arima_upper_bound": 410.7405296709928,
+      "sarima_prediction": 394.98662119154193,
+      "sarima_lower_bound": 375.85781245560884,
+      "sarima_upper_bound": 414.115429927475
+    },
+    {
+      "timestamp": "2025-01-03T16:45:00",
+      "interval_minutes_ahead": 60,
+      "arima_prediction": 393.185777004234,
+      "arima_lower_bound": 372.967160736223,
+      "arima_upper_bound": 413.40439327224504,
+      "sarima_prediction": 394.46431005561953,
+      "sarima_lower_bound": 372.2544178486301,
+      "sarima_upper_bound": 416.67420226260896
+    },
+    {
+      "timestamp": "2025-01-03T17:00:00",
+      "interval_minutes_ahead": 75,
+      "arima_prediction": 393.2412160158114,
+      "arima_lower_bound": 370.63585912808065,
+      "arima_upper_bound": 415.84657290354215,
+      "sarima_prediction": 392.8789488826963,
+      "sarima_lower_bound": 367.9905216330243,
+      "sarima_upper_bound": 417.7673761323683
+    },
+    {
+      "timestamp": "2025-01-03T17:15:00",
+      "interval_minutes_ahead": 90,
+      "arima_prediction": 393.2404470254696,
+      "arima_lower_bound": 368.43504684329497,
+      "arima_upper_bound": 418.0458472076443,
+      "sarima_prediction": 396.3920776453081,
+      "sarima_lower_bound": 369.0616576804791,
+      "sarima_upper_bound": 423.72249761013717
+    },
+    {
+      "timestamp": "2025-01-03T17:30:00",
+      "interval_minutes_ahead": 105,
+      "arima_prediction": 393.2217585114068,
+      "arima_lower_bound": 366.4082910618114,
+      "arima_upper_bound": 420.0352259610022,
+      "sarima_prediction": 399.3033607259877,
+      "sarima_lower_bound": 369.73495288902103,
+      "sarima_upper_bound": 428.8717685629544
+    },
+    {
+      "timestamp": "2025-01-03T17:45:00",
+      "interval_minutes_ahead": 120,
+      "arima_prediction": 393.23141322154237,
+      "arima_lower_bound": 364.55701915188035,
+      "arima_upper_bound": 421.9058072912044,
+      "sarima_prediction": 398.3224560333031,
+      "sarima_lower_bound": 366.677305110972,
+      "sarima_upper_bound": 429.96760695563427
+    }
+  ]
+}
