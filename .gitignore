@@ -1,0 +1,95 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.test
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data files (local development)
+data/raw/*
+!data/raw/.gitkeep
+data/features/*
+!data/features/.gitkeep
+models/*
+!models/.gitkeep
+
+# MLflow
+mlruns/
+mlflow_artifacts/
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+
+# Docker
+*.tar
+
+# Node.js (if using React frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+out/
+
+# MacOS
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Model artifacts (large files)
+*.pkl
+*.joblib
+*.h5
+*.onnx
+
+# Backup files
+*.bak
+*.backup
+
+# OS generated files
+Thumbs.db
